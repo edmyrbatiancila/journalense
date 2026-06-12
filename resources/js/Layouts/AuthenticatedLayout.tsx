@@ -33,6 +33,18 @@ export default function Authenticated({
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    href={route('journals.index')}
+                                    active={route().current('journals.*')}
+                                >
+                                    Journals Entries
+                                </NavLink>
+                                <NavLink
+                                    href={route('calendar.index')}
+                                    active={route().current('calendar.*')}
+                                >
+                                    Calendar
+                                </NavLink>
                             </div>
                         </div>
 
@@ -136,6 +148,20 @@ export default function Authenticated({
                             active={route().current('dashboard')}
                         >
                             Dashboard
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink
+                            href={route('journals.index')}
+                            active={route().current('journals.*')}
+                        >
+                            Journal Entries
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink
+                            href={route('calendar.index')}
+                            active={route().current('calendar.*')}
+                        >
+                            Calendar
                         </ResponsiveNavLink>
                     </div>
 
