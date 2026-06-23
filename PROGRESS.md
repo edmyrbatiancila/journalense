@@ -1,6 +1,6 @@
 # JournaLense Project Progress
 
-> Last updated: June 12, 2026
+> Last updated: June 23, 2026
 
 This file tracks JournaLense progress based on the project roadmap in `README.md` and the Trello board plan in `docs/trello-board.md`.
 
@@ -51,10 +51,25 @@ Completed work:
 
 Status: In Progress
 
-Next cards:
+Completed cards:
 
 - Create Journal Entries Migration And Model
 - Build Journal CRUD Routes And Controller
+
+Completed work:
+
+- Added the `journal_entries` migration with user ownership, journal content, mood, entry date, and draft fields.
+- Added the `JournalEntry` model, model factory, draft factory state, casts, and user relationships.
+- Added authenticated and verified journal resource routes.
+- Added journal index, create, store, show, edit, update, and delete controller actions.
+- Scoped journal listings and creation to the authenticated user.
+- Added ownership checks for viewing, editing, updating, and deleting journal entries.
+- Added store and update validation for published entries and drafts.
+- Added a journal entry service for reusable ownership checks.
+- Verified the journal migration is applied and all existing automated tests pass.
+
+Next cards:
+
 - Build Journal Entry Form
 - Build Journal Archive And Details Pages
 - Add Draft Saving
@@ -141,7 +156,7 @@ Planned cards:
 | Profile Management | Completed | Breeze profile editing, password update, and account deletion are available. |
 | Base Navigation | Completed | Dashboard, journal entries, calendar, and settings/profile links are available. |
 | Dashboard | Started | Basic authenticated dashboard exists. Summary widgets are planned for Sprint 3. |
-| Journal Management | In Progress | Placeholder page exists. CRUD implementation starts in Sprint 2. |
+| Journal Management | In Progress | Migration, model, factory, validation, authenticated routes, and CRUD controller actions are complete. Frontend forms and archive/detail pages are next. |
 | Calendar System | Not Started | Placeholder page exists. Monthly calendar implementation starts in Sprint 3. |
 | Mood Tracking | Not Started | Planned for Sprint 4. |
 | Search | Not Started | Planned for Sprint 4. |
@@ -152,5 +167,4 @@ Planned cards:
 
 ## Next Recommended Step
 
-Begin Sprint 2 by creating the `journal_entries` migration, `JournalEntry` model, user relationship, fillable fields, and model factory. After that, build authenticated journal CRUD routes and controller actions.
-
+Build the Journal Entry Form with title, content, entry date, mood placeholder, validation errors, and separate publish and draft actions. Then connect the form to the completed journal CRUD backend.
