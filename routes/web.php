@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JournalEntryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -23,9 +24,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/journals', function () {
-        return Inertia::render('Journals/Index');
-    })->name('journals.index');
+    Route::resource('/journals', JournalEntryController::class);
+
 
     Route::get('/calendar', function () {
         return Inertia::render('Calendar/Index');
