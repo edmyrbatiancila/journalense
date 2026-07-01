@@ -18,9 +18,9 @@ export default function Index({ journals }: IndexProps) {
         >
             <Head title="Journal Entries" />
 
-            <div className="py-12">
+            <div className="py-8 sm:py-12">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="bg-white p-6 shadow-sm sm:rounded-lg">
+                    <div className="bg-white p-4 shadow-sm sm:rounded-lg sm:p-6">
                         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                             <div>
                                 <h3 className="text-lg font-medium text-gray-900">
@@ -34,7 +34,7 @@ export default function Index({ journals }: IndexProps) {
 
                             <Link
                                 href={ route("journals.create") }
-                                className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-gray-800 px-4 py-2.5 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
                             >
                                 New Entry
                             </Link>
@@ -67,7 +67,7 @@ export default function Index({ journals }: IndexProps) {
                                         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                                             <div className="min-w-0">
                                                 <div className="flex flex-wrap items-center gap-2">
-                                                    <h3 className="text-lg font-semibold text-gray-900">
+                                                    <h3 className="break-words text-lg font-semibold text-gray-900">
                                                         {displayTitle(journal)}
                                                     </h3>
 
@@ -93,7 +93,7 @@ export default function Index({ journals }: IndexProps) {
                                                 </p>
                                             </div>
 
-                                            <div className="flex shrink-0 gap-3">
+                                            <div className="flex shrink-0 gap-4 pt-1 sm:pt-0">
                                                 <Link
                                                     href={route("journals.show", journal.id)}
                                                     className="text-sm font-medium text-indigo-600 hover:text-indigo-900"

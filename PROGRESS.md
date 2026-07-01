@@ -1,12 +1,12 @@
 # JournaLense Project Progress
 
-> Last updated: June 23, 2026
+> Last updated: July 1, 2026
 
 This file tracks JournaLense progress based on the project roadmap in `README.md` and the Trello board plan in `docs/trello-board.md`.
 
 ## Current Status
 
-JournaLense is currently in active development. The project foundation is complete, and the next focus is the Journal MVP.
+JournaLense is currently in active development. The project foundation and Sprint 2 - Journal MVP are complete. The next focus is journal feature testing, then Sprint 3 - Calendar + Dashboard.
 
 ## Overall Roadmap Progress
 
@@ -45,16 +45,19 @@ Completed work:
 - Added placeholder calendar page.
 - Verified build and tests after enabling the required SQLite PHP extensions for testing.
 
-### In Progress
+### Completed
 
 #### Sprint 2 - Journal MVP
 
-Status: In Progress
+Status: Completed
 
 Completed cards:
 
 - Create Journal Entries Migration And Model
 - Build Journal CRUD Routes And Controller
+- Build Journal Entry Form
+- Build Journal Archive And Details Pages
+- Add Draft Saving
 
 Completed work:
 
@@ -66,13 +69,16 @@ Completed work:
 - Added ownership checks for viewing, editing, updating, and deleting journal entries.
 - Added store and update validation for published entries and drafts.
 - Added a journal entry service for reusable ownership checks.
+- Added the journal create page with title, content, entry date, mood placeholder, validation errors, and save entry/save draft actions.
+- Added the journal archive index page with paginated entries, empty state, entry excerpts, draft and mood badges, and links for view/edit actions.
+- Added the journal detail page with title, entry date, mood and draft badges, content display, empty-content state, edit action, shadcn alert dialog delete confirmation, and a mobile-friendly layout.
+- Added the journal edit page with prefilled form values, validation error display, cancel/back navigation, and separate save draft/publish actions.
+- Added mobile usability improvements for the journal archive, detail, edit, and delete confirmation layouts.
+- Completed draft saving behavior with the `is_draft` field, draft-friendly validation, archive draft badges, and edit-to-publish support.
+- Added shadcn-style UI components and Motion-based page animation for the journal detail page.
+- Added initial frontend journal entry types and display helpers for titles, excerpts, and dates.
+- Fixed Tailwind/shadcn compatibility so the frontend production build passes.
 - Verified the journal migration is applied and all existing automated tests pass.
-
-Next cards:
-
-- Build Journal Entry Form
-- Build Journal Archive And Details Pages
-- Add Draft Saving
 
 Primary goal:
 
@@ -87,6 +93,24 @@ Expected implementation areas:
 - `resources/js/Pages/Journals`
 - `resources/js/Layouts/AuthenticatedLayout.tsx`
 - `tests/Feature`
+
+### In Progress
+
+#### Testing + QA
+
+Status: In Progress
+
+Current card:
+
+- Add Feature Tests For Journal Entries
+
+Next testing focus:
+
+- Authenticated user can create an entry.
+- Authenticated user can update their own entry.
+- Authenticated user can delete their own entry.
+- User cannot access another user's entry.
+- Validation errors are returned.
 
 ### Not Started
 
@@ -140,11 +164,10 @@ Planned cards:
 - Voice-to-Journal Feature
 - Push Notifications
 
-#### Testing + QA
+#### Remaining Testing + QA
 
 Planned cards:
 
-- Add Feature Tests For Journal Entries
 - Add Feature Tests For Calendar And Search
 - Add Manual QA Checklist
 
@@ -156,7 +179,7 @@ Planned cards:
 | Profile Management | Completed | Breeze profile editing, password update, and account deletion are available. |
 | Base Navigation | Completed | Dashboard, journal entries, calendar, and settings/profile links are available. |
 | Dashboard | Started | Basic authenticated dashboard exists. Summary widgets are planned for Sprint 3. |
-| Journal Management | In Progress | Migration, model, factory, validation, authenticated routes, and CRUD controller actions are complete. Frontend forms and archive/detail pages are next. |
+| Journal Management | Completed | Journal migration, model, factory, validation, authenticated routes, CRUD controller actions, create form, archive list, detail page, edit page, delete confirmation, draft saving, and mobile usability pass are complete. |
 | Calendar System | Not Started | Placeholder page exists. Monthly calendar implementation starts in Sprint 3. |
 | Mood Tracking | Not Started | Planned for Sprint 4. |
 | Search | Not Started | Planned for Sprint 4. |
@@ -167,4 +190,4 @@ Planned cards:
 
 ## Next Recommended Step
 
-Build the Journal Entry Form with title, content, entry date, mood placeholder, validation errors, and separate publish and draft actions. Then connect the form to the completed journal CRUD backend.
+Add focused feature tests for journal entries before moving into Sprint 3. Start with create, update, delete, ownership protection, and validation coverage.
